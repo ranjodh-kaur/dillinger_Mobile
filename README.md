@@ -20,7 +20,7 @@
 
 **5. Persistent Data Storage: 5 Lectures**
 - SQLite: Android Built in SQLite content provider, Modifying data using your android application, Creating basic activity, Configuring manifest, Packaging and managing SQLite with android app
-- 
+
 **6. Android Services and Threads: 3 Lectures**
 - Android service class: Controlling services, Spawning process, Process Life Cycle, Thread Caveats, Background Processing Services
 
