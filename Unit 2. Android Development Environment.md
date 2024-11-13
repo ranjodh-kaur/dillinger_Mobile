@@ -363,17 +363,6 @@ public void onDestroy() {
 - **File-based Encryption**: Improved security with file-based encryption, which encrypts individual files rather than the entire device, offering better performance and flexibility.
 - **Java 8 Support**: Android 7.0 Nougat supports Java 8 features, allowing developers to use lambdas and other modern Java features.
 - **Enhanced Notifications**: Nougat improved how notifications appear, allowing bundled notifications for easier viewing and management.
-
----
-
-### **Summary:**
-
-- **Android 7.0 Nougat** brought significant enhancements over **Android 6.0 Marshmallow**, focusing on multitasking, better battery life, improved notifications, and enhanced graphics performance.
-- **Key Improvements**: Split-screen multitasking, better battery efficiency, more intuitive notifications, and the ability to reply from the notification bar.
-- **Security and Customization**: Nougat also introduced stronger encryption and custom quick settings for users to tailor their experience.
-
-In simple terms, **Android Nougat** made the Android system smarter, faster, and more efficient, offering a better overall experience compared to its predecessors like **Marshmallow**.
-
 ---
 
 #### **7. Assembling Android 7 Development Workstation**
@@ -446,9 +435,3 @@ public class MainActivity extends AppCompatActivity {
 
 </LinearLayout>
 ```
-
-### Summary
-- **Android Studio** is your development workspace.
-- **Android 7.0 Nougat** introduced multitasking and better battery management.
-- The **Android Activity** is like a screen, and the **Service** runs in the background.
-- Setting up your **Android Development Environment** is like preparing a workbench to build something.
