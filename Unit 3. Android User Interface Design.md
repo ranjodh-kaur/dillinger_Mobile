@@ -831,4 +831,3 @@ protected void onPause() {
 
 ---
 
-These analogies and examples help make the concept of Android UI design simpler and more relatable!
