@@ -1,3 +1,5 @@
+# Unit 1. Introduction to Mobile Development
+____
 - Introduction to Mobile Development: Brief History of Mobile: Beginning and evolution, 
 - Mobile ecosystem: Operator, Network, Devices, Platforms, Operating System, 
 - Application Frameworks, Types of Mobile applications, Seven rules for developing mobile strategy.
@@ -5,8 +7,6 @@ ______
 ### **Introduction to Mobile Development**
 
 Mobile development involves designing, creating, and maintaining software applications for mobile devices like smartphones, tablets, and wearable technology. Let's dive into its key topics:
-
----
 
 ### **1. Brief History of Mobile: Beginning and Evolution**
 The Evolution of Devices :-
@@ -363,5 +363,4 @@ The goal is to make it easy for users to accomplish their task (order a cake) wi
 
 4. **Learn and Iterate Quickly:**
    - Simple products are easier to test, gather feedback, and improve upon. A lean and simple app allows you to **iterate faster**, learn from users, and make changes more efficiently.
-
 
