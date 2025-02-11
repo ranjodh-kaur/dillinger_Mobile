@@ -173,13 +173,14 @@ This matrix helps businesses and developers understand which type of app suits t
 ---
 
 ### **4. Seven Rules for Developing a Mobile Strategy**
-Rule #1: Forget What You Think You Know 
-Rule #2: Believe What You See, Not What You Read 
-Rule #3: Constraints Never Come First 
-Rule #4: Focus on Context, Goals, and Needs 
-Rule #5: You Can’t Support Everything 
-Rule #6: Don’t Convert, Create 
-Rule #7: Keep It Simple
+
+-  Rule #1: Forget What You Think You Know
+-  Rule #2: Believe What You See, Not What You Read
+-  Rule #3: Constraints Never Come First
+-  Rule #4: Focus on Context, Goals, and Needs
+-  Rule #5: You Can’t Support Everything
+-  Rule #6: Don’t Convert, Create
+-  Rule #7: Keep It Simple
 
 ### Rule #1: Forget What You Think You Know
 ###### **Analogy: Learning to Bake a Cake 🎂**  
