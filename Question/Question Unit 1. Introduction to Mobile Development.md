@@ -103,6 +103,7 @@ Here are some well-known **mobile network operators (MNOs)** worldwide:
 
 **Q:** A company wants to launch its mobile app globally. How should they choose a mobile network operator for different regions?  
 ✅ **Answer:** **They should consider network coverage, speed, costs, and local regulations in each region.**  
+
 ---
 
 ### **3. Types of Mobile Applications**  
@@ -124,8 +125,10 @@ Here are some well-known **mobile network operators (MNOs)** worldwide:
 
 **Q:** A business wants to launch a **mobile app quickly** with limited budget. What type of app should they choose and why?  
 ✅ **Answer:** **Hybrid or web app, as they are cost-effective and work across platforms.**  
+
 **Q:** A gaming company wants to create a **high-performance mobile game** with smooth graphics. Should they use a hybrid or native app approach?  
 ✅ **Answer:** **Native app, because it provides better graphics and performance optimization.**  
+
 ---
 
 ### **4. Seven Rules for Developing a Mobile Strategy**  
