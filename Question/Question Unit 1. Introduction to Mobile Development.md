@@ -289,3 +289,89 @@ ____
 **Explanation:** Analytics tools provide insights into user engagement, app performance, and areas for improvement.  
 
 ---
+
+
+
+
+
+---
+
+### **📌 LOTS (Low Order Thinking Skills - Remembering & Understanding)**  
+
+1. **Define mobile development.**  
+   - Mobile development refers to the process of creating applications and software solutions for mobile devices such as smartphones and tablets.  
+
+2. **List three mobile operating systems.**  
+   - Android, iOS, Windows Phone.  
+
+3. **Identify the key components of the mobile ecosystem.**  
+   - The key components include **Operators, Networks, Devices, Platforms, Operating Systems, and Application Frameworks**.  
+
+4. **Explain the significance of mobile networks in communication.**  
+   - Mobile networks enable wireless communication by providing connectivity through cellular towers, allowing users to make calls, send messages, and access the internet.  
+
+5. **Describe the difference between mobile platforms and application frameworks.**  
+   - **Mobile platforms** (e.g., Android, iOS) provide the base environment for running apps, while **application frameworks** (e.g., React Native, Flutter) provide tools and libraries to develop applications efficiently.  
+
+6. **Summarize the seven rules for developing a mobile strategy.**  
+   - The seven rules include:  
+     1. Understand your audience.  
+     2. Focus on user experience.  
+     3. Optimize for different devices.  
+     4. Ensure app security.  
+     5. Keep applications up to date.  
+     6. Use cloud integration.  
+     7. Analyze and optimize app performance.  
+
+7. **Illustrate the evolution of mobile technology with examples.**  
+   - **1G (1980s):** Analog voice calls (e.g., Motorola DynaTAC).  
+   - **2G (1990s):** Digital communication, SMS (e.g., Nokia 3310).  
+   - **3G (2000s):** Mobile internet, video calls (e.g., BlackBerry, early iPhones).  
+   - **4G (2010s):** High-speed internet, HD streaming (e.g., LTE smartphones).  
+   - **5G (2020s):** Ultra-fast connectivity, IoT applications.  
+
+8. **Explain the role of operators in the mobile ecosystem.**  
+   - Operators (e.g., Verizon, AT&T, Jio) provide network services, manage SIM cards, allocate bandwidth, and ensure connectivity for users.  
+
+---
+
+### **📌 HOTS (High Order Thinking Skills - Applying, Analyzing, Evaluating, Creating)**  
+
+9. **Classify different types of mobile applications based on their use cases.**  
+   - **Native apps:** Built for a specific OS (e.g., WhatsApp, iOS Calculator).  
+   - **Web apps:** Accessed through browsers (e.g., Google Docs online).  
+   - **Hybrid apps:** Combination of both (e.g., Twitter, Instagram).  
+
+10. **Demonstrate how a mobile application can be designed for better user engagement.**  
+   - A well-designed mobile app should have:  
+     - **Simple and intuitive UI/UX**  
+     - **Fast loading time**  
+     - **Push notifications for engagement**  
+     - **Personalized content recommendations**  
+
+11. **Compare Android and iOS based on security and performance.**  
+   - **Android:** Open-source, more customization, more vulnerable to malware.  
+   - **iOS:** Closed ecosystem, stricter security, optimized hardware-software integration.  
+
+12. **Differentiate between native, web, and hybrid mobile applications.**  
+   - **Native:** High performance, platform-specific.  
+   - **Web:** Runs in browsers, requires internet.  
+   - **Hybrid:** Cross-platform, built using frameworks like React Native.  
+
+13. **Assess the impact of different mobile platforms on app development trends.**  
+   - Android dominates the market with flexibility, while iOS leads in revenue due to premium users. Hybrid frameworks are rising due to cross-platform needs.  
+
+14. **Justify the importance of mobile strategy in business growth.**  
+   - A strong mobile strategy improves **customer engagement, brand visibility, sales, and competitiveness** by leveraging mobile applications and digital marketing.  
+
+15. **Propose a new mobile application concept that solves a real-world problem.**  
+   - **App Idea:** An AI-powered **Mental Health Companion** that provides guided meditation, stress management tips, and connects users with therapists.  
+
+16. **Develop a basic mobile strategy for a startup entering the mobile market.**  
+   - **Target Audience:** Identify potential users.  
+   - **Platform Choice:** Android, iOS, or both?  
+   - **Monetization Model:** Free, subscription-based, or ads?  
+   - **Marketing Plan:** Social media, influencer marketing, app store optimization.  
+   - **Performance Optimization:** Regular updates and bug fixes.  
+
+---
