@@ -136,11 +136,17 @@ Here are some well-known **mobile network operators (MNOs)** worldwide:
 **Q13:** What are the **Seven Rules for Developing a Mobile Strategy**?  
 **A13:** The **Seven Rules** are:  
 Rule #1: Forget What You Think You Know 
+
 Rule #2: Believe What You See, Not What You Read 
+
 Rule #3: Constraints Never Come First 
+
 Rule #4: Focus on Context, Goals, and Needs 
+
 Rule #5: You Can’t Support Everything 
+
 Rule #6: Don’t Convert, Create
+
 Rule #7: Keep It Simple  
 
 **Q14:** Why is user experience (UX) critical in mobile app development?  
