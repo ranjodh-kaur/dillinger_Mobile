@@ -1,6 +1,15 @@
 # Question Unit 3. Android User Interface
 ________
-
+**Android User Interface Design** 
+Topics:
+-  XML Naming scheme, XML syntax, XML Referencing, XML constants, XML Styles, XML Colors
+- View Group Class, View Class, Activity Class
+- UI Design from scratch: Checkbox, TextView
+- Button element to interface
+- Error elimination using XML Editor
+- Working with Relative, Linear, Table and Grid Layouts
+- Understanding Activity Life Cycle
+______
 ### **Easy Questions**
 
 1. **What is the purpose of the XML Naming Scheme in Android?**
@@ -191,7 +200,6 @@ ________
 
 ---
 
-These questions and answers should help you better understand the Android UI design concepts in a simple and practical way!
 
 ### **Easy Questions**
 
