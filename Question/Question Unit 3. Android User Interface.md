@@ -784,6 +784,7 @@ ___
 ---
 
 ### **30. Formulate a method to dynamically switch between Linear Layout and Relative Layout in an Android app.**  
+
 ```java
 LinearLayout linearLayout = findViewById(R.id.myLinearLayout);
 RelativeLayout relativeLayout = new RelativeLayout(this);
