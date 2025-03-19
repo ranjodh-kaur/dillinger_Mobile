@@ -359,6 +359,187 @@ ______
    - **Use `layout-large`, `layout-small` folders** to define screen-specific layouts.  
 
 ---
+---
+
+## **📌 LOTS Questions & Answers (Remembering & Understanding)**  
+
+1. **What is the role of the XML Editor in Android Studio?**  
+   - The XML Editor helps developers create and modify UI layouts, detect syntax errors, and provide suggestions to fix issues.  
+
+2. **List three common errors detected by the XML Editor in Android Studio.**  
+   - Unclosed tags  
+   - Invalid attribute values  
+   - Duplicate `ID` attributes  
+
+3. **Define syntax errors in XML and provide an example.**  
+   - Syntax errors occur when the XML structure is incorrect, such as missing closing tags.  
+     **Example:**  
+     ```xml
+     <TextView android:text="Hello"  <!-- Missing closing tag -->
+     ```  
+
+4. **Identify the purpose of lint checking in the XML Editor.**  
+   - Lint checking analyzes XML files for potential errors, performance issues, and unused resources.  
+
+5. **What does an unclosed XML tag error indicate?**  
+   - It means that an opening tag does not have a corresponding closing tag.  
+
+6. **List two ways to reference a color resource in an XML file.**  
+   - Using `@color/colorName` (defined in `colors.xml`)  
+   - Using a direct HEX value (e.g., `#FF5733`)  
+
+7. **Explain how the XML Editor helps in debugging layout-related errors.**  
+   - It highlights incorrect attributes, missing resources, and layout issues to guide developers in fixing them.  
+
+8. **Why does the XML Editor highlight missing attribute values?**  
+   - To prevent runtime errors and ensure that required attributes are properly set.  
+
+9. **Describe the impact of incorrectly nested XML elements in Android layouts.**  
+   - Incorrect nesting can cause **layout rendering issues** and **unexpected behavior** in UI elements.  
+
+10. **Differentiate between a runtime error and a compile-time error in XML layouts.**  
+    - **Compile-time errors**: Occur when XML syntax is incorrect (e.g., missing tags).  
+    - **Runtime errors**: Occur when XML references missing resources (e.g., using `@color/missingColor`).  
+
+11. **Explain how the Design View in Android Studio helps in error detection.**  
+    - It visually displays UI elements and highlights rendering issues with red warnings.  
+
+12. **How does the XML Editor assist in preventing duplicate ID attribute errors?**  
+    - It warns when multiple elements share the same `android:id` in a layout.  
+
+13. **What happens when an invalid attribute is used in an XML layout file?**  
+    - The XML Editor underlines the invalid attribute and shows a suggestion to correct it.  
+
+14. **Explain why defining a missing resource (e.g., `@color/missingColor`) results in an error.**  
+    - Because the referenced resource does not exist in `colors.xml`, leading to a **resource not found error**.  
+
+15. **How does the XML Editor warn about unused resources in an Android project?**  
+    - It highlights unused colors, strings, and dimensions in grey and suggests removing them.  
+
+---
+
+## **📌 HOTS Questions & Answers (Applying, Analyzing, Evaluating, Creating)**  
+
+16. **How can you fix an unclosed tag error in an XML file? Provide an example.**  
+    - Ensure that every opening tag has a corresponding closing tag.  
+    **Incorrect XML:**  
+    ```xml
+    <TextView android:text="Hello"
+    ```  
+    **Fixed XML:**  
+    ```xml
+    <TextView android:text="Hello"/>
+    ```  
+
+17. **Identify and correct the error in the following XML snippet:**  
+    ```xml
+    <TextView
+        android:layout_width="wrap content"
+        android:layout_height="wrap_content"
+        android:text="Hello World">
+    ```  
+    **Error:** Incorrect attribute name `wrap content` (should be `wrap_content`).  
+    **Fixed XML:**  
+    ```xml
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World"/>
+    ```  
+
+18. **Modify an incorrect XML layout that has duplicate IDs and explain the correction.**  
+    **Incorrect XML:**  
+    ```xml
+    <TextView android:id="@+id/text1"/>
+    <Button android:id="@+id/text1"/>
+    ```  
+    **Correction:** Change one of the IDs to a unique value.  
+    ```xml
+    <TextView android:id="@+id/text1"/>
+    <Button android:id="@+id/button1"/>
+    ```  
+
+19. **Why does an error occur when using `android:textSize="20"` instead of `20sp`?**  
+    - Android requires text sizes in **scale-independent pixels (sp)** to maintain consistency across screen sizes.  
+
+20. **Compare the effectiveness of Lint Checking and Manual Debugging for XML errors.**  
+    - **Lint Checking**: Automatically detects issues and provides quick fixes.  
+    - **Manual Debugging**: Allows deeper analysis but is time-consuming.  
+
+21. **Examine why the following XML code would cause an error in Android Studio:**  
+    ```xml
+    <Button
+        android:id="@+id/submitBtn"
+        android:text="Submit"
+        android:layout_width="match_parent">
+    ```  
+    **Error:** Missing `android:layout_height` attribute.  
+    **Fixed XML:**  
+    ```xml
+    <Button
+        android:id="@+id/submitBtn"
+        android:text="Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    ```  
+
+22. **Justify the importance of `tools:ignore="HardcodedText"` when eliminating warnings in the XML Editor.**  
+    - It allows developers to bypass **hardcoded text warnings** during debugging without modifying code permanently.  
+
+23. **Assess how the XML Editor improves debugging efficiency compared to manual error detection.**  
+    - It provides **real-time feedback**, **error highlighting**, and **quick fixes**, reducing debugging time.  
+
+24. **Write an XML layout that contains multiple intentional errors. Then, correct them to ensure a valid UI design.**  
+    **Incorrect XML (with errors):**  
+    ```xml
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match parent"
+        android:layout_height="wrap-content">
+
+        <TextView
+            android:id="@+id/text1"
+            android:text="Hello World"
+            android:layout_width="wrapcontent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/text1"
+            android:text="Click"
+            android:layout_width="match_parent"/>
+    </LinearLayout>
+    ```  
+    **Fixed XML:**  
+    ```xml
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text1"
+            android:text="Hello World"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/button1"
+            android:text="Click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    ```  
+
+25. **Design an XML-based debugging checklist that developers can follow to eliminate common errors in Android UI development.**  
+    ✅ **Ensure all tags are properly closed**  
+    ✅ **Use valid attribute names and values**  
+    ✅ **Check for duplicate `ID` attributes**  
+    ✅ **Use `match_parent` or `wrap_content` for width/height**  
+    ✅ **Ensure referenced resources exist (e.g., colors, strings)**  
+    ✅ **Use `sp` for text sizes and `dp` for dimensions**  
+    ✅ **Run Lint checks to detect potential issues**  
+
+---
 
 
 
