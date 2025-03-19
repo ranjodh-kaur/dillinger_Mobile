@@ -200,10 +200,9 @@ ______
 
 ---
  
-
+## **📌 LOTS Questions & Answers (Remembering & Understanding)**  
 ---
 
-## **📌 LOTS Questions & Answers (Remembering & Understanding)**  
 
 1. **Define the purpose of XML in Android development.**  
    - XML (Extensible Markup Language) is used to design the UI of Android applications. It defines layouts, colors, styles, and resources in a structured way, separating UI from business logic.  
@@ -284,10 +283,11 @@ ______
    - `onCreate()`: Called when an activity is first created.  
    - `onResume()`: Called when the activity is visible and ready for user interaction.  
 
----
 
-## **📌 HOTS Questions & Answers (Applying, Analyzing, Evaluating, Creating)**  
-
+_____
+## **📌 HOTS Questions & Answers**
+(Applying, Analyzing, Evaluating, Creating)
+_______
 19. **Write an XML snippet to define a button with a custom background color and text size.**  
    ```xml
    <Button
@@ -359,10 +359,10 @@ ______
    - **Use `layout-large`, `layout-small` folders** to define screen-specific layouts.  
 
 ---
-
+### **📌 LOTS Questions & Answers on Error elimination using XML Editor**
 ---
+(Remembering & Understanding)
 
-### **📌 LOTS Questions & Answers on Error elimination using XML Editor (Remembering & Understanding)**  
 
 1. **What is the role of the XML Editor in Android Studio?**  
    - The XML Editor helps developers create and modify UI layouts, detect syntax errors, and provide suggestions to fix issues.  
@@ -417,9 +417,10 @@ ______
 15. **How does the XML Editor warn about unused resources in an Android project?**  
     - It highlights unused colors, strings, and dimensions in grey and suggests removing them.  
 
----
-
-## **📌 HOTS Questions & Answers (Applying, Analyzing, Evaluating, Creating)**  
+____
+## **📌 HOTS Questions & Answers**  
+______
+(Applying, Analyzing, Evaluating, Creating)
 
 16. **How can you fix an unclosed tag error in an XML file? Provide an example.**  
     - Ensure that every opening tag has a corresponding closing tag.  
@@ -541,7 +542,256 @@ ______
     ✅ **Run Lint checks to detect potential issues**  
 
 ---
+## **📌 LOTS Questions on Working with Relative, Linear, Table and Grid Layouts**
 
+---
+(Remembering & Understanding)
+  
+
+### **1. State the purpose of LinearLayout in Android UI design.**  
+- LinearLayout is a **view group** that arranges child views in a **single direction**, either **horizontally** or **vertically**.
+- It helps in creating **simple and structured UI layouts**.  
+
+👉 **Example Code:**  
+```xml
+<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:text="Welcome to LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+```
+
+---
+
+### **2. Mention any three attributes of RelativeLayout.**  
+Some commonly used attributes in RelativeLayout are:  
+1. `android:layout_alignParentTop` – Aligns the view at the **top** of the parent.  
+2. `android:layout_centerHorizontal` – Centers the view **horizontally** in the parent.  
+3. `android:layout_toRightOf` – Places the view **to the right** of another view.  
+
+👉 **Example Code:**  
+```xml
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:id="@+id/text1"
+        android:text="Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+    
+    <TextView
+        android:text="This is right of Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text1"/>
+</RelativeLayout>
+```
+
+---
+
+### **3. Identify the default orientation of LinearLayout in Android.**  
+- The default orientation of **LinearLayout** is **horizontal**.
+
+---
+
+### **4. Specify the function of `android:layout_column` in Table Layout.**  
+- It assigns a view to a **specific column** in a **Table Layout**.
+
+👉 **Example Code:**  
+```xml
+<TableRow>
+    <TextView android:text="Row 1, Col 1" android:layout_column="0"/>
+    <TextView android:text="Row 1, Col 2" android:layout_column="1"/>
+</TableRow>
+```
+
+---
+
+### **5. Distinguish between Grid Layout and Table Layout by listing two differences.**  
+| Feature            | Grid Layout                              | Table Layout |
+|--------------------|----------------------------------------|-------------|
+| **Flexibility**   | Can merge rows & columns dynamically | Fixed structure |
+| **Resizing**      | Supports resizing dynamically        | Less flexible |
+
+---
+
+### **6. Determine the attribute responsible for setting the number of rows and columns in Grid Layout.**  
+- `android:columnCount` – Defines **number of columns** in GridLayout.  
+- `android:rowCount` – Defines **number of rows** in GridLayout.  
+
+👉 **Example Code:**  
+```xml
+<GridLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:rowCount="2">
+</GridLayout>
+```
+
+---
+
+### **7. Describe the purpose of `android:stretchColumns` in Table Layout.**  
+- It allows specific **columns to stretch** and take up extra space.  
+
+👉 **Example Code:**  
+```xml
+<TableLayout android:stretchColumns="1">
+```
+
+---
+
+### **8. Clarify the role of `android:layout_alignParentBottom` in Relative Layout.**  
+- It **aligns** a view to the **bottom** of its parent.  
+
+👉 **Example Code:**  
+```xml
+<TextView
+    android:text="I am at the bottom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"/>
+```
+
+---
+
+### **9. Explain the control `android:gravity` has over element placement in Linear Layout.**  
+- `android:gravity` **controls** how child views are aligned **inside the parent**.
+
+---
+
+### **10. Illustrate the working mechanism of `android:weightSum` in Linear Layout.**  
+- `android:weightSum` **divides space proportionally**.
+
+👉 **Example Code:**  
+```xml
+<LinearLayout
+    android:weightSum="3">
+    
+    <TextView 
+        android:layout_weight="1" />
+    <TextView 
+        android:layout_weight="2" />
+</LinearLayout>
+```
+___
+## **📌 HOTS Questions  on Working with Relative, Linear, Table and Grid Layouts**  
+---
+(Applying, Analyzing, Evaluating, Creating)
+
+
+### **16. Develop an XML snippet for a Linear Layout with two buttons aligned vertically.**  
+```xml
+<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <Button 
+        android:text="Button 1" />
+    
+    <Button 
+        android:text="Button 2" />
+</LinearLayout>
+```
+
+---
+
+### **17. Adjust a Relative Layout to position a TextView above a Button.**  
+```xml
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textView"
+        android:text="Hello"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:text="Click Me"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
+```
+
+---
+
+### **18. Construct a Table Layout with four rows and three columns.**  
+```xml
+<TableLayout android:layout_width="match_parent">
+    <TableRow>
+        <TextView android:text="Row 1, Col 1"/>
+        <TextView android:text="Row 1, Col 2"/>
+        <TextView android:text="Row 1, Col 3"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Row 2, Col 1"/>
+        <TextView android:text="Row 2, Col 2"/>
+        <TextView android:text="Row 2, Col 3"/>
+    </TableRow>
+</TableLayout>
+```
+
+---
+
+### **19. Organize a Grid Layout that arranges six images in a 3x2 structure.**  
+```xml
+<GridLayout
+    android:layout_width="match_parent"
+    android:columnCount="3"
+    android:rowCount="2">
+    
+    <ImageView android:src="@drawable/image1"/>
+    <ImageView android:src="@drawable/image2"/>
+    <ImageView android:src="@drawable/image3"/>
+    <ImageView android:src="@drawable/image4"/>
+    <ImageView android:src="@drawable/image5"/>
+    <ImageView android:src="@drawable/image6"/>
+</GridLayout>
+```
+
+---
+
+### **20. Transform a Linear Layout design into a Relative Layout for enhanced flexibility.**  
+👉 **Instead of:**  
+```xml
+<LinearLayout android:orientation="vertical">
+    <TextView android:text="Hello"/>
+    <Button android:text="Click"/>
+</LinearLayout>
+```
+👉 **Use Relative Layout:**  
+```xml
+<RelativeLayout>
+    <TextView android:text="Hello" android:layout_alignParentTop="true"/>
+    <Button android:text="Click" android:layout_below="@id/textView"/>
+</RelativeLayout>
+```
+
+---
+
+### **25. Defend the choice of Constraint Layout over Relative Layout.**  
+- Constraint Layout is **better** because:  
+  - **Less nesting**, making UI rendering **faster**.  
+  - **Flexible constraints** instead of absolute positioning.
+
+---
+
+### **30. Formulate a method to dynamically switch between Linear Layout and Relative Layout in an Android app.**  
+```java
+LinearLayout linearLayout = findViewById(R.id.myLinearLayout);
+RelativeLayout relativeLayout = new RelativeLayout(this);
+relativeLayout.addView(linearLayout);
+setContentView(relativeLayout);
+```
+
+---
 
 
 
