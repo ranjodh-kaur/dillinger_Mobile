@@ -359,9 +359,10 @@ ______
    - **Use `layout-large`, `layout-small` folders** to define screen-specific layouts.  
 
 ---
+
 ---
 
-## **📌 LOTS Questions & Answers (Remembering & Understanding)**  
+### **📌 LOTS Questions & Answers on Error elimination using XML Editor (Remembering & Understanding)**  
 
 1. **What is the role of the XML Editor in Android Studio?**  
    - The XML Editor helps developers create and modify UI layouts, detect syntax errors, and provide suggestions to fix issues.  
