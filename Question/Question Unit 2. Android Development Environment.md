@@ -3,6 +3,18 @@ ____
 # Question Unit 2. Android Development Environment
 ___
 
+**Android Development Environment:**
+1. Introduction to android
+2. Advantage of Android over other development environment
+3. Android execution environment
+4. Components of android application
+5. Android activity and service lifecycle
+6. Android 7.0 nougat and comparison with older version
+7. Assembling android 7 development workstation
+8. Downloading and installing Android Studio2
+9. Introduction to Android Studio IDE.
+_______
+
 ### **Easy Questions**
 
 1. **What is an Activity in an Android application?**
