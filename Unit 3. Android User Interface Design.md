@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
 
 ---
 
-## **🎭 Summary of the Analogy**
+## **Summary**
 | **Activity Lifecycle**  | **Movie Theater Analogy** |
 |------------------------|-------------------------|
 | `onCreate()`  | Buying a ticket & finding your seat 🎟️ |
@@ -373,13 +373,13 @@ public class MainActivity extends AppCompatActivity {
 3️⃣ **Reopen the app** → `onRestart()`, `onStart()`, `onResume()` get called.  
 4️⃣ **Rotate the screen** → `onPause()`, `onStop()`, `onDestroy()`, then `onCreate()` runs again.  
 
----
 
-
+___
 ### **Basic Structure of an Activity Class**:
-Here’s a simple example of an Activity class in an Android app.
+____
 
-#### **Code Example**: Basic Activity Class
+
+#### **Code Example**: 
 ```java
 package com.example.myapp;
 
