@@ -361,9 +361,6 @@ This way, even if the device is rotated, the data is saved and restored, ensurin
 
 ---
 
-These scenario-based questions and answers help break down key **Fragment** concepts in Android and show how they can be used in real-world app development!
-
-
 _______
 # Android Intent Class:
 1. **What is an *Intent* in Android?**
