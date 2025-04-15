@@ -334,3 +334,102 @@ In the Notes app, you might create a DatabaseHelper class that extends SQLiteOpe
 * **Database Versioning:** As you develop the app and add new features, you may need to change the database structure (like adding tables or columns). Update _DATABASE_VERSION_ in _DatabaseHelper_ to reflect these changes and handle them in _onUpgrade()_.
 
 ***
+
+---
+
+## **How to Use SQLite in Android **
+
+---
+
+### 🔸 **Step 1: Create a New Android Project**
+- Open **Android Studio**
+- File → New → New Project
+- Choose **Empty Activity**, give it a name, and finish setup.
+
+---
+
+### 🔸 **Step 2: Create a SQLite Helper Class**
+SQLite is handled via a class that extends `SQLiteOpenHelper`.
+
+```java
+public class MyDatabaseHelper extends SQLiteOpenHelper {
+
+    // Database Name and Version
+    private static final String DATABASE_NAME = "StudentDB.db";
+    private static final int DATABASE_VERSION = 1;
+
+    // Table and columns
+    private static final String TABLE_NAME = "students";
+    private static final String COL_ID = "id";
+    private static final String COL_NAME = "name";
+
+    public MyDatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // Create table
+        String query = "CREATE TABLE " + TABLE_NAME + " (" +
+                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_NAME + " TEXT)";
+        db.execSQL(query);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Drop old table if exists
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+    }
+
+    // Add data
+    public void addStudent(String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_NAME, name);
+        db.insert(TABLE_NAME, null, values);
+        db.close();
+    }
+
+    // Read data
+    public Cursor readAllStudents() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+    }
+}
+```
+
+---
+
+### 🔸 **Step 3: Use the Helper in Your Activity**
+
+```java
+MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
+
+// Insert data
+dbHelper.addStudent("Alice");
+
+// Read data
+Cursor cursor = dbHelper.readAllStudents();
+while (cursor.moveToNext()) {
+    String name = cursor.getString(1); // column index 1 is "name"
+    Log.d("Student", "Name: " + name);
+}
+cursor.close();
+```
+
+---
+
+### 🔸 **Step 4: Add Permissions (Optional)**
+No special permissions are needed for SQLite since it’s local.
+
+---
+
+### 💡 Tips for Beginners
+- Always close `Cursor` and `Database` when done.
+- Use `Logcat` to debug and see database output.
+- Practice CRUD operations: **Create, Read, Update, Delete**.
+
+---
+
