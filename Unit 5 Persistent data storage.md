@@ -229,13 +229,6 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
----
-
-## Add Permission in `AndroidManifest.xml`
-
-No special permission is needed for local SQLite. But don’t forget to declare your activity properly if you create multiple ones.
-
----
 
 ## Output
 
