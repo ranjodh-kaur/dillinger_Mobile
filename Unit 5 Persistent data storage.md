@@ -106,7 +106,7 @@ public DBHelper(Context context) {
 
 ---
 
-### onCreate()
+- ### onCreate()
 
 ```java
 @Override
