@@ -45,6 +45,207 @@ In short, SQLite is like having a personal librarian in your phone to keep all y
 * **Example:**
 Suppose you're building a Notes app. You want to save each note so the user can view or edit it later, even if they close and reopen the app. You can use SQLite to create a database that stores each note with a title, content, and date.
 
+We'll create a **simple Student App** where you can:
+
+- Add student details (name & email)
+- View all students in a list
+
+---
+
+## Task:
+
+- **Activity**: MainActivity.java
+- **Database Helper**: DBHelper.java
+- **UI**: `activity_main.xml` (for input and buttons)
+
+---
+
+##  File 1: `activity_main.xml`  
+Located in: `res/layout/activity_main.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/btnInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insert" />
+
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View All" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Results will appear here"
+        android:textSize="16sp"
+        android:paddingTop="10dp" />
+</LinearLayout>
+```
+
+---
+
+## File 2: `DBHelper.java`  
+Located in: `java/com.yourpackagename/DBHelper.java`
+
+```java
+package com.example.sqliteexample;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DBHelper extends SQLiteOpenHelper {
+
+    public static final String DBNAME = "StudentDB.db";
+
+    public DBHelper(Context context) {
+        super(context, DBNAME, null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE Student(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS Student");
+        onCreate(db);
+    }
+
+    public boolean insertData(String name, String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("name", name);
+        values.put("email", email);
+
+        long result = db.insert("Student", null, values);
+        return result != -1;  // true if success
+    }
+
+    public Cursor getAllData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM Student", null);
+    }
+}
+```
+
+---
+
+##  File 3: `MainActivity.java`  
+Located in: `java/com.yourpackagename/MainActivity.java`
+
+```java
+package com.example.sqliteexample;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.*;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText editName, editEmail;
+    Button btnInsert, btnView;
+    TextView textViewResult;
+    DBHelper db;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editName = findViewById(R.id.editName);
+        editEmail = findViewById(R.id.editEmail);
+        btnInsert = findViewById(R.id.btnInsert);
+        btnView = findViewById(R.id.btnView);
+        textViewResult = findViewById(R.id.textViewResult);
+
+        db = new DBHelper(this);
+
+        btnInsert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = editName.getText().toString();
+                String email = editEmail.getText().toString();
+
+                boolean inserted = db.insertData(name, email);
+                if (inserted) {
+                    Toast.makeText(MainActivity.this, "Inserted Successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Insertion Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor res = db.getAllData();
+                if (res.getCount() == 0) {
+                    textViewResult.setText("No data found");
+                    return;
+                }
+
+                StringBuilder buffer = new StringBuilder();
+                while (res.moveToNext()) {
+                    buffer.append("ID: ").append(res.getInt(0)).append("\n");
+                    buffer.append("Name: ").append(res.getString(1)).append("\n");
+                    buffer.append("Email: ").append(res.getString(2)).append("\n\n");
+                }
+
+                textViewResult.setText(buffer.toString());
+            }
+        });
+    }
+}
+```
+
+---
+
+## Add Permission in `AndroidManifest.xml`
+
+No special permission is needed for local SQLite. But don’t forget to declare your activity properly if you create multiple ones.
+
+---
+
+## Output
+
+| Input Form                     | Result |
+|-------------------------------|--------|
+| Name: John <br> Email: j@x.com | Inserted Successfully |
+| Press “View All”              | Shows list of students |
+
+---
+
 #### **Practical Steps** :
 
 1. **Create a Database Helper Class**: This class will help you set up and manage your database.
