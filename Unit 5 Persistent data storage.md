@@ -45,7 +45,107 @@ In short, SQLite is like having a personal librarian in your phone to keep all y
 * **Example:**
 Suppose you're building a Notes app. You want to save each note so the user can view or edit it later, even if they close and reopen the app. You can use SQLite to create a database that stores each note with a title, content, and date.
 
-We'll create a **simple Student App** where you can:
+## What is `DBHelper.java`?
+
+`DBHelper` is a Java class that **extends** the `SQLiteOpenHelper` class provided by Android.  
+This gives you all the tools you need to manage SQLite databases.
+
+---
+
+## Basic Structure of `DBHelper.java`
+
+```java
+public class DBHelper extends SQLiteOpenHelper {
+    
+    private static final String DATABASE_NAME = "StudentDB";
+    private static final int DATABASE_VERSION = 1;
+
+    public DBHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // Called when database is created for the FIRST time
+        db.execSQL("CREATE TABLE students(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, marks INTEGER)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Called when DATABASE_VERSION is increased
+        db.execSQL("DROP TABLE IF EXISTS students");
+        onCreate(db);
+    }
+
+}
+```
+
+---
+
+##  Detailed Breakdown
+
+### Class Declaration
+
+```java
+public class DBHelper extends SQLiteOpenHelper
+```
+This means DBHelper **inherits** SQLiteOpenHelper, giving access to database methods.
+
+---
+
+### Constructor
+
+```java
+public DBHelper(Context context) {
+    super(context, DATABASE_NAME, null, DATABASE_VERSION);
+}
+```
+- `DATABASE_NAME`: Name of the `.db` file that stores the database
+- `DATABASE_VERSION`: Used for versioning and upgrades
+- `null`: CursorFactory (not needed for most cases)
+
+---
+
+### onCreate()
+
+```java
+@Override
+public void onCreate(SQLiteDatabase db) {
+    db.execSQL("CREATE TABLE students(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, marks INTEGER)");
+}
+```
+- **Triggered only once**: When the database is created for the first time
+- **Creates a table** called `students` with 3 columns:
+  - `id` → auto-incremented primary key
+  - `name` → student’s name (TEXT)
+  - `marks` → student’s marks (INTEGER)
+
+---
+
+### onUpgrade()
+
+```java
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    db.execSQL("DROP TABLE IF EXISTS students");
+    onCreate(db);
+}
+```
+- Called when the version number is changed.
+- Deletes the old table and recreates it.
+- Useful when you want to change the schema (like adding/removing columns).
+
+---
+
+## Summary
+
+| Method              | Purpose                              |
+|---------------------|--------------------------------------|
+| `onCreate()`        | Create table for the first time      |
+| `onUpgrade()`       | Modify table structure (if version updated) |
+
+---
+Create a **simple Student App** where you can:
 
 - Add student details (name & email)
 - View all students in a list
@@ -238,224 +338,6 @@ public class MainActivity extends AppCompatActivity {
 | Press “View All”              | Shows list of students |
 
 ---
-
-#### **Explanation of the java code for creating database file** :
-
-Let’s go step-by-step to explain `DBHelper.java`, which is a common helper class used for managing an **SQLite database** in an Android app. This file typically helps you:
-
-- Create the database
-- Create tables
-- Upgrade tables when schema changes
-- Insert, update, delete, fetch data easily
-
----
-
-## What is `DBHelper.java`?
-
-`DBHelper` is a Java class that **extends** the `SQLiteOpenHelper` class provided by Android.  
-This gives you all the tools you need to manage SQLite databases.
-
----
-
-## Basic Structure of `DBHelper.java`
-
-```java
-public class DBHelper extends SQLiteOpenHelper {
-    
-    private static final String DATABASE_NAME = "StudentDB";
-    private static final int DATABASE_VERSION = 1;
-
-    public DBHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        // Called when database is created for the FIRST time
-        db.execSQL("CREATE TABLE students(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, marks INTEGER)");
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Called when DATABASE_VERSION is increased
-        db.execSQL("DROP TABLE IF EXISTS students");
-        onCreate(db);
-    }
-
-}
-```
-
----
-
-##  Detailed Breakdown
-
-### 🔸 Class Declaration
-
-```java
-public class DBHelper extends SQLiteOpenHelper
-```
-This means DBHelper **inherits** SQLiteOpenHelper, giving access to database methods.
-
----
-
-### Constructor
-
-```java
-public DBHelper(Context context) {
-    super(context, DATABASE_NAME, null, DATABASE_VERSION);
-}
-```
-- `DATABASE_NAME`: Name of the `.db` file that stores the database
-- `DATABASE_VERSION`: Used for versioning and upgrades
-- `null`: CursorFactory (not needed for most cases)
-
----
-
-### onCreate()
-
-```java
-@Override
-public void onCreate(SQLiteDatabase db) {
-    db.execSQL("CREATE TABLE students(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, marks INTEGER)");
-}
-```
-- **Triggered only once**: When the database is created for the first time
-- **Creates a table** called `students` with 3 columns:
-  - `id` → auto-incremented primary key
-  - `name` → student’s name (TEXT)
-  - `marks` → student’s marks (INTEGER)
-
----
-
-### onUpgrade()
-
-```java
-@Override
-public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    db.execSQL("DROP TABLE IF EXISTS students");
-    onCreate(db);
-}
-```
-- Called when the version number is changed.
-- Deletes the old table and recreates it.
-- Useful when you want to change the schema (like adding/removing columns).
-
----
-
-
-
-
-## Summary
-
-| Method              | Purpose                              |
-|---------------------|--------------------------------------|
-| `onCreate()`        | Create table for the first time      |
-| `onUpgrade()`       | Modify table structure (if version updated) |
-
----
-
----
-
-## **How to Use SQLite in Android **
-
----
-
-### 🔸 **Step 1: Create a New Android Project**
-- Open **Android Studio**
-- File → New → New Project
-- Choose **Empty Activity**, give it a name, and finish setup.
-
----
-
-### 🔸 **Step 2: Create a SQLite Helper Class**
-SQLite is handled via a class that extends `SQLiteOpenHelper`.
-
-```java
-public class MyDatabaseHelper extends SQLiteOpenHelper {
-
-    // Database Name and Version
-    private static final String DATABASE_NAME = "StudentDB.db";
-    private static final int DATABASE_VERSION = 1;
-
-    // Table and columns
-    private static final String TABLE_NAME = "students";
-    private static final String COL_ID = "id";
-    private static final String COL_NAME = "name";
-
-    public MyDatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        // Create table
-        String query = "CREATE TABLE " + TABLE_NAME + " (" +
-                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL_NAME + " TEXT)";
-        db.execSQL(query);
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop old table if exists
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        onCreate(db);
-    }
-
-    // Add data
-    public void addStudent(String name) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COL_NAME, name);
-        db.insert(TABLE_NAME, null, values);
-        db.close();
-    }
-
-    // Read data
-    public Cursor readAllStudents() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-    }
-}
-```
-
----
-
-### 🔸 **Step 3: Use the Helper in Your Activity**
-
-```java
-MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
-
-// Insert data
-dbHelper.addStudent("Alice");
-
-// Read data
-Cursor cursor = dbHelper.readAllStudents();
-while (cursor.moveToNext()) {
-    String name = cursor.getString(1); // column index 1 is "name"
-    Log.d("Student", "Name: " + name);
-}
-cursor.close();
-```
-
----
-
-### 🔸 **Step 4: Add Permissions (Optional)**
-No special permissions are needed for SQLite since it’s local.
-
----
-
-### 💡 Note
-- Always close `Cursor` and `Database` when done.
-- Use `Logcat` to debug and see database output.
-- Practice CRUD operations: **Create, Read, Update, Delete**.
-
----
-
-
-
-
-
 
 ### **Android Built-in SQLite Content Provider**
 
