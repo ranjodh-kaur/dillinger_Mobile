@@ -610,6 +610,3 @@ While DDMS itself is deprecated, Android Studio’s integrated tools offer simil
 
 ---
 
-### Summary
-
-Each of these tools and features plays a critical role in building secure, reliable, and well-functioning Android applications.
