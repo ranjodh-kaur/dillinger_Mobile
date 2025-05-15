@@ -335,3 +335,252 @@ You want to allow users to back up and restore their notes from the SQLite datab
 3. **Call `backupDatabase()`** when the user wants to export data.
 
 ---
+
+
+
+### **LOTS (Low Order Thinking Skills) - Questions and Answers:**
+
+---
+
+**6. SharedPreferences:**
+**Question:** A weather app saves the user’s preferred temperature unit (Celsius or Fahrenheit). How would you implement a mechanism to save and retrieve this preference using SharedPreferences?
+**Answer:**
+
+* To save the temperature unit:
+
+  ```java
+  SharedPreferences sharedPreferences = getSharedPreferences("WeatherPrefs", MODE_PRIVATE);
+  SharedPreferences.Editor editor = sharedPreferences.edit();
+  editor.putString("TemperatureUnit", "Celsius");
+  editor.apply();
+  ```
+* To retrieve the temperature unit:
+
+  ```java
+  SharedPreferences sharedPreferences = getSharedPreferences("WeatherPrefs", MODE_PRIVATE);
+  String tempUnit = sharedPreferences.getString("TemperatureUnit", "Celsius");
+  ```
+
+---
+
+**7. Internal Storage:**
+**Question:** A journal app allows users to write daily notes. How would you ensure that each note is saved in a separate text file within internal storage, and how would you read them back to display the list of notes?
+**Answer:**
+
+* To save a note:
+
+  ```java
+  String fileName = "note1.txt";
+  String noteContent = "Today was a good day!";
+  try (FileOutputStream fos = openFileOutput(fileName, MODE_PRIVATE)) {
+      fos.write(noteContent.getBytes());
+  } catch (IOException e) {
+      e.printStackTrace();
+  }
+  ```
+* To read a note:
+
+  ```java
+  try (FileInputStream fis = openFileInput("note1.txt")) {
+      byte[] buffer = new byte[fis.available()];
+      fis.read(buffer);
+      String note = new String(buffer);
+  } catch (IOException e) {
+      e.printStackTrace();
+  }
+  ```
+
+---
+
+**8. External Storage:**
+**Question:** A music player app allows users to download playlists. How would you implement external storage to save the downloaded audio files, ensuring that the app checks for storage availability before downloading?
+**Answer:**
+
+* Check storage availability:
+
+  ```java
+  if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+      File musicDir = new File(Environment.getExternalStorageDirectory(), "MusicDownloads");
+      if (!musicDir.exists()) {
+          musicDir.mkdirs();
+      }
+  }
+  ```
+* Save the audio file:
+
+  ```java
+  try (FileOutputStream fos = new FileOutputStream(new File(musicDir, "song1.mp3"))) {
+      fos.write(audioData);
+  } catch (IOException e) {
+      e.printStackTrace();
+  }
+  ```
+
+---
+
+**9. SQLite Database:**
+**Question:** A student management app stores student names, roll numbers, and grades. How would you design a SQLite Database to store this data and query the records by roll number?
+**Answer:**
+
+* Create the table:
+
+  ```java
+  String CREATE_TABLE = "CREATE TABLE Students (RollNo INTEGER PRIMARY KEY, Name TEXT, Grade TEXT)";
+  db.execSQL(CREATE_TABLE);
+  ```
+* Insert a record:
+
+  ```java
+  ContentValues values = new ContentValues();
+  values.put("RollNo", 101);
+  values.put("Name", "John");
+  values.put("Grade", "A");
+  db.insert("Students", null, values);
+  ```
+* Query by roll number:
+
+  ```java
+  Cursor cursor = db.rawQuery("SELECT * FROM Students WHERE RollNo = ?", new String[]{"101"});
+  if (cursor.moveToFirst()) {
+      String name = cursor.getString(cursor.getColumnIndex("Name"));
+      String grade = cursor.getString(cursor.getColumnIndex("Grade"));
+  }
+  cursor.close();
+  ```
+
+---
+
+**10. Room Database:**
+**Question:** A travel app records destinations visited by the user, including the destination name, date visited, and a brief description. How would you structure the Room Database to store this information and fetch the most recent destination visited?
+**Answer:**
+
+* Entity class:
+
+  ```java
+  @Entity
+  public class Destination {
+      @PrimaryKey(autoGenerate = true)
+      public int id;
+      public String name;
+      public String dateVisited;
+      public String description;
+  }
+  ```
+* DAO:
+
+  ```java
+  @Dao
+  public interface DestinationDao {
+      @Insert
+      void insert(Destination destination);
+
+      @Query("SELECT * FROM Destination ORDER BY dateVisited DESC LIMIT 1")
+      Destination getMostRecentDestination();
+  }
+  ```
+
+---
+
+### **HOTS (High Order Thinking Skills) - Questions and Answers:**
+
+---
+
+**6. SharedPreferences:**
+**Question:** A language learning app saves the user’s learning progress for each lesson. How would you implement SharedPreferences to store the progress data while also allowing the user to reset their progress and start over?
+**Answer:**
+
+* Save progress:
+
+  ```java
+  SharedPreferences sharedPreferences = getSharedPreferences("LearningProgress", MODE_PRIVATE);
+  SharedPreferences.Editor editor = sharedPreferences.edit();
+  editor.putInt("Lesson1Progress", 80);
+  editor.putInt("Lesson2Progress", 100);
+  editor.apply();
+  ```
+* Reset progress:
+
+  ```java
+  editor.clear();
+  editor.apply();
+  ```
+
+---
+
+**7. Internal Storage:**
+**Question:** A health tracking app stores daily exercise logs. How would you implement data encryption to secure these logs in internal storage and prevent unauthorized access, especially if the device is rooted?
+**Answer:**
+
+* Encrypt and save data:
+
+  ```java
+  String key = "SecretKey12345678";
+  Cipher cipher = Cipher.getInstance("AES");
+  SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "AES");
+  cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+
+  byte[] encryptedData = cipher.doFinal("Exercise log data".getBytes());
+  FileOutputStream fos = openFileOutput("exerciseLog.txt", MODE_PRIVATE);
+  fos.write(encryptedData);
+  fos.close();
+  ```
+* Decrypt data:
+
+  ```java
+  cipher.init(Cipher.DECRYPT_MODE, secretKey);
+  byte[] decryptedData = cipher.doFinal(encryptedData);
+  String logData = new String(decryptedData);
+  ```
+
+---
+
+**8. External Storage:**
+**Question:** A photo editing app allows users to save edited images with filters and effects. How would you implement external storage management to handle large file sizes while also implementing cleanup mechanisms for old or unused files?
+**Answer:**
+
+* Save file and check size:
+
+  ```java
+  File imageFile = new File(Environment.getExternalStorageDirectory(), "EditedImage.png");
+  long fileSize = imageFile.length();
+  if (fileSize > 10 * 1024 * 1024) {  // If file size > 10MB
+      imageFile.delete();  // Cleanup
+  }
+  ```
+
+---
+
+**9. SQLite Database:**
+**Question:** A library management app stores book titles, authors, and borrowing history. How would you design a SQLite Database that not only stores the book data but also provides a borrowing history for each user, including due dates and return status?
+**Answer:**
+
+* Create tables:
+
+  ```java
+  String CREATE_BOOKS_TABLE = "CREATE TABLE Books (BookID INTEGER PRIMARY KEY, Title TEXT, Author TEXT)";
+  String CREATE_BORROW_TABLE = "CREATE TABLE BorrowHistory (UserID INTEGER, BookID INTEGER, DueDate TEXT, ReturnStatus TEXT)";
+  db.execSQL(CREATE_BOOKS_TABLE);
+  db.execSQL(CREATE_BORROW_TABLE);
+  ```
+* Query borrowing history:
+
+  ```java
+  Cursor cursor = db.rawQuery("SELECT * FROM BorrowHistory WHERE UserID = ?", new String[]{"1"});
+  ```
+
+---
+
+**10. Room Database:**
+**Question:** A fitness app tracks user workouts, including the type of workout, duration, and calories burned. How would you structure the Room Database to generate weekly and monthly workout reports, displaying trends and highlighting top workouts?
+**Answer:**
+
+* DAO Query:
+
+  ```java
+  @Query("SELECT workoutType, SUM(duration) AS totalDuration, SUM(caloriesBurned) AS totalCalories FROM Workout WHERE date BETWEEN :startDate AND :endDate GROUP BY workoutType")
+  List<WorkoutReport> getWorkoutReport(String startDate, String endDate);
+  ```
+
+---
+
+
