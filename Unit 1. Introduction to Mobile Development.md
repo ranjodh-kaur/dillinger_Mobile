@@ -197,7 +197,21 @@ The mobile industry is constantly evolving. New tools, technologies, and user pr
 2. **Don’t copy someone else’s cake** – A cake that works for one person may not suit another’s taste. Similarly, don’t blindly copy what others have done—focus on what your users need.  
 3. **Start fresh** – Even if your mobile project has been running for a while, take a step back. Look at it with fresh eyes, experiment, and adjust based on the latest trends and user needs.  
 
-By **letting go of outdated assumptions and embracing new possibilities**, you'll create something fresh, valuable, and suited to the modern world—just like baking the perfect cake for today’s audience! 🎂📱
+By **letting go of outdated assumptions and embracing new possibilities**, you'll create something fresh, valuable, and suited to the modern world—just like baking the perfect cake for today’s audience!
+
+____________________
+Following are some tips and tricks to help you forget what you know:
+
+• Leave your baggage at the door. Forget what you think you know about mobile. It
+is most likely incorrect.
+
+• Don’t try to emulate what has been done before and put that in front of your user.
+Focus on what is right for your user, not what is right for someone else’s user.
+
+• Start at the beginning. Even if a project has been in development for a while, you
+can still start fresh. Provide new perspectives, and breathe life into the project right
+from the start.
+_____________________
 
 ### Rule #2: Believe What You See, Not What You Read
 ###### **Analogy: Taste the Cake, Don’t Just Read the Recipe 🎂**  
@@ -217,7 +231,29 @@ In mobile, there are countless reports, trends, and so-called "expert opinions" 
 5. **Have a backup plan** – If a cake turns out bad, you can repurpose it into cake pops. Similarly, if an app doesn’t succeed as expected, learn from it and pivot to something new.  
 
 ##### **Final Thought:**  
-Instead of trusting everything you read, **go into the kitchen, bake the cake, and taste it yourself!** 📱🍰
+Instead of trusting everything you read, **go into the kitchen, bake the cake, and taste it yourself!** 
+
+_______
+
+Following are some tips and tricks for believing what you see and not what you read:
+
+• Don’t trust any report, fact, or figure that is more than a year or two old. It is most
+likely wrong. For example, the majority of assumptions about mobile development
+pre-iPhone are no longer applicable.
+
+• Perform contextual inquiries, not focus groups. Go to your users and ask them
+questions in person, in their context, not yours. They often have a lot to say; listen
+and keep an open mind.
+
+• Record everything. Nothing makes your case like your users’ own words. They
+have a funny way of reducing company politics and focusing back on the user.
+
+• Don’t forget to innovate. Try new things, be bold, and don’t be afraid to fail.
+
+• The best strategy succeeds even if it fails. Have a contingency plan. If your plan
+fails to meet expectations, how can you reuse what you’ve learned or done on
+something else?
+_______
 
 ### Rule #3: Constraints Never Come First 
 
@@ -244,7 +280,22 @@ When planning a mobile project, **starting with constraints is like worrying abo
 5. **Be flexible, but don’t settle for a plain cake** – If one ingredient is unavailable, **find an alternative without ruining the entire recipe.**  
 
 ##### **Final Thought:**  
-Great bakers **don’t let a small oven stop them from creating a masterpiece.** The same applies to mobile projects—**dream big, bake first, and solve problems as they come!** 🎂📱🚀
+Great bakers **don’t let a small oven stop them from creating a masterpiece.** The same applies to mobile projects—**dream big, bake first, and solve problems as they come!** 
+
+______
+Following are tips and tricks for how to make the constraints not come first:
+
+• Don’t invite that guy to an early-stage brainstorming session. Leave him out of the picture until you have something more concrete that will get him excited about the
+idea. If you don’t know how to do this, go to the people that have been around for a while and ask. They will most likely know how to get those guys excited about
+your idea.
+
+• Hopefully it doesn’t need to be said, but don’t be that guy. Refer back to Rule #1 and forget what you think you know. It’s probably wrong, and your team is trying
+to make you even more successful. Let the team do this.
+
+• If you are concerned about the constraints of the mobile medium, know that there will always be constraints in mobile. Get over it. It isn’t a deal breaker. Just make
+sure you aren’t the deal breaker. Focus on strategy first, what they user needs, and lay down the features; then, if the constraints become an issue, fall back to the user
+goals. There is always an alternative
+_______
 
 ### Rule #4: Focus on Context, Goals, and Needs 
 
@@ -285,7 +336,22 @@ Context is all about the **variables** that impact the user’s goal. Where is t
 3. **User’s Needs**:
    - The app could **suggest cake recipes** for users who want to **bake a cake at home**, or it could help them find the **perfect bakery** or **cake delivery service** for people who are **celebrating a special occasion**.
 
-By focusing on **needs**, then refining those needs into **goals** and adding the **context** (location, time, occasion), you can design a cake strategy that helps users have the best experience, whether they’re ordering a cake or baking one themselves! 🍰📱
+By focusing on **needs**, then refining those needs into **goals** and adding the **context** (location, time, occasion), you can design a cake strategy that helps users have the best experience, whether they’re ordering a cake or baking one themselves! 
+
+______
+
+Following are tips on how to focus on context, goals, and needs:
+
+• Defining the users’ context is the first thing to do. Without it, you don’t have a
+mobile strategy; you have only a plan of action.
+
+• Uncover the users’ goals, and then try and understand how the users’ context alters
+their goals.
+
+• With goals understood, figure out the tasks the users want to perform.
+
+• Look for ways to filter content by context, such as location, media, and model.
+_______
 
 ### Rule #5: You Can’t Support Everything 
 When building a mobile strategy, one of the first things you have to do is **accept that you can't support every device** out there. The sheer number of mobile devices and browsers in the world makes it impractical to develop for each one, and trying to do so can drain your resources before you even get your product to market.
@@ -314,7 +380,23 @@ Imagine you’re building a **cake delivery app**:
 - Sometimes, the **most popular device** isn’t the best choice for your app. For example, if your app involves complex video editing or baking tutorials, the user base may prefer devices that offer **better screen resolution** and **processing power** (like high-end **iPhones** or **Android phones**).
 - **Check the devices already accessing your site** to understand the market demand.
   
-By **focusing on the right devices** early on and refining your product from there, you can avoid wasting time and resources trying to accommodate every mobile device under the sun! 🎂📱
+By **focusing on the right devices** early on and refining your product from there, you can avoid wasting time and resources trying to accommodate every mobile device under the sun! 
+
+______
+
+Here are some tips and tricks to remember when it comes to device support:
+
+• Don’t kill yourself by trying to support everything. Start with the devices that best
+represent your core customer.
+
+• Remember, the most popular device or the one that’s easiest to develop for might
+not always be the best device for your project.
+
+• Check your server logs for the devices currently accessing your site. These are the
+first devices to target.
+
+• Go to your operator store and do a little market research to find out the recommended devices for your target customer.
+_____
 
 ### Rule #6: Don’t Convert, Create 
 When asked, “How do I convert my product to mobile?” the answer is simple: **you don’t**. Porting or converting a product directly from another medium (like a website) to mobile is not the best approach. Mobile has its unique set of challenges and advantages that require a fresh approach to product development.
@@ -338,6 +420,20 @@ If you’re creating a **cake ordering app** for mobile, simply converting your 
    - Mobile devices are different from desktop computers. They’re more personal, **on-the-go**, and context-sensitive. Instead of simply applying desktop rules to mobile, **take advantage of mobile’s strengths**, like:
      - **Location awareness**: For a cake app, this could mean offering users the nearest bakery.
      - **Instant access**: Mobile allows for quicker decision-making, so don’t overwhelm users with too many choices or too much information.
+
+________
+Here are some tips and tricks for how to create instead of convert:
+
+• Understand your user and his context. Having an idea of how and when users will
+access your content will aid in understanding how to best create a tailored mobile
+experience.
+
+• Don’t forget that mobile is a unique medium with its own benefits. Don’t try to
+simply apply the same rationale to your mobile strategy as you would your web or
+print strategy.
+
+
+______
 
 ### Rule #7: Keep It Simple
 If there’s one rule to remember in mobile product design, it’s **keep it simple**. While mobile devices are powerful, people don’t want them to be overly complicated. Users want apps that are straightforward and meet their basic needs—no more, no less. Here’s why simplicity is so important and how you can apply it:
@@ -365,3 +461,12 @@ The goal is to make it easy for users to accomplish their task (order a cake) wi
 4. **Learn and Iterate Quickly:**
    - Simple products are easier to test, gather feedback, and improve upon. A lean and simple app allows you to **iterate faster**, learn from users, and make changes more efficiently.
 
+_____
+Tips and tricks include:
+
+• Seriously, keep it simple! It can be a big challenge, especially for larger organizations, but try to limit the features to only those that are most crucial to your users.
+Never put your corporate goals or objectives before the users’ interests.
+
+• Try to determine the need that will motivate users to act or interact, and build the
+experience around that and nothing else.
+______
