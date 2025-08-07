@@ -134,7 +134,7 @@ The **Mobile Application Media Matrix** categorizes mobile applications based on
 5. **Native Applications** – Instagram offers a seamless experience with device-specific optimizations.  
 6. **Games** – Subway Surfers is an offline running game with immersive full-screen interaction.  
 
-The **Mobile Application Media Matrix** helps developers choose the right platform for their mobile product strategy. 🚀📱
+The **Mobile Application Media Matrix** helps developers choose the right platform for their mobile product strategy. 
 
 #### **3. Application Context**  
 Applications can be categorized based on **how and where** they are used:  
@@ -168,7 +168,7 @@ The **Application Context Matrix** categorizes mobile applications based on **us
 - **Productivity Applications**: Google Drive allows users to store and edit documents on the go.  
 - **Immersive Full-Screen Applications**: Games like PUBG Mobile offer interactive and engaging full-screen experiences.  
 
-This matrix helps businesses and developers understand which type of app suits their **target audience and objectives** best. 🚀📱
+This matrix helps businesses and developers understand which type of app suits their **target audience and objectives** best.
 
 ---
 
