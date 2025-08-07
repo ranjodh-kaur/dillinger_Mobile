@@ -1,4 +1,7 @@
 # PEIT-116 [Mobile Application Development]
+
+# Part-A
+
 **1. Introduction to Mobile Development: 5 Lectures**
 - Brief History of Mobile:  Beginning and evolution
 - Mobile ecosystem: Operator, Network, Devices, Platforms, Operating System, Application, Frameworks, Types of Mobile applications, Seven rules for developing mobile strategy.
@@ -11,6 +14,8 @@
 - UI Design from scratch: Checkbox, TextView, Button element to interface, Error elimination using XML Editor
 - Working with Relative, Linear, Table and Grid Layouts
 - Understanding Activity Life Cycle.
+
+# Part-B
 
 **4. Apps Interactivity in Android: 5 Lectures**
 - Android Fragment: Fragment Class, Fragment Life Cycle
