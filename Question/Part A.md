@@ -1,3 +1,5 @@
+**Questions**
+
 Q1. Identify the process, if a user wants to communicate between more than one activities.  (2)
 
 Q2. Discuss the steps involved to design an application on Android Studio in detail. Mention the process involved in creation of an Android Virtual Device for displaying the results on screen.(12)
@@ -14,14 +16,15 @@ If your app needs to take a photo, you don’t write code to control the camera 
 
 **How do developers use Android APIs?**
 
-1. Import the right library/package
+1. Import the right library/package: 
 Developers include Android libraries in their project (like android.location for GPS, android.media for audio, etc.).
 
-2. Call the API methods
+2. Call the API methods: 
 They use the methods (functions) provided by the API.
+
 Example: To get GPS location → use LocationManager class methods.
 
-3. Get the output/use the service
+3. Get the output/use the service: 
 API gives back results (like current location, camera image, sensor data) that the app can use.
 
 **Example for better clarity**
