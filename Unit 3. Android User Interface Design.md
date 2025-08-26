@@ -19,9 +19,9 @@ Topics:
 
 When your app grows, you’ll have dozens or even hundreds of XML files (layouts, drawables, menus, values, etc.).
 
-If names are random → project becomes confusing.
-
-If we follow a consistent naming scheme → project is organized, readable, and easy to maintain.
+- If names are random → project becomes confusing.
+  
+- If we follow a consistent naming scheme → project is organized, readable, and easy to maintain.
 
 **Analogy**:  
 Think of **XML Naming Scheme** as giving labels to each item in a store. For example, if you have a shirt, you name it "Shirt1" and "Shirt2" so you can easily identify and use them later.
