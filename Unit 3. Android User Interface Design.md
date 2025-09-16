@@ -805,6 +805,32 @@ The correct XML should be:
 3. **Wrong Resource Reference**:  
    - **Error**: When referencing a resource that doesn't exist, Android Studio will flag it with an error like: "Resource not found."
    - **Fix**: Ensure that the resource (like a string or color) exists in the `strings.xml` or `colors.xml` file.
+   - 
+
+**Common errors:**
+
+- Missing root element
+
+- Mismatched tags (e.g., <TextView> not closed)
+
+- Case sensitivity issues (<Button> vs <button>)
+
+- Invalid attributes (e.g., misspelling android:layot_width)
+
+- Unescaped characters (&, <, > not properly escaped)
+
+**How an XML editor helps:**
+
+- Provides syntax highlighting for quick spotting of errors.
+
+- Offers auto-completion to reduce typos.
+
+- Shows real-time error messages (red underline in Android Studio).
+
+- Ensures well-formed structure (closing tags auto-inserted).
+
+
+   
 ---
 
 ### **12. Working with Different Layouts: Relative, Linear, Table, and Grid Layouts**
