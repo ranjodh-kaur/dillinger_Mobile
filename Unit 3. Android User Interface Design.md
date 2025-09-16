@@ -302,7 +302,7 @@ An Android activity goes through the following states:
 
 ---
 
-## ** Activity Lifecycle Flow (Diagram)**
+## **Activity Lifecycle Flow (Diagram)**
 ```
 1️⃣ onCreate()
       ⬇
@@ -319,7 +319,7 @@ An Android activity goes through the following states:
 ```
 ---
 
-## ** Example: Implementing Activity Lifecycle Methods in Android**
+## **Example: Implementing Activity Lifecycle Methods in Android**
 Below is a complete Android **Java** example demonstrating the lifecycle callbacks.
 
 ### **MainActivity.java**
@@ -374,7 +374,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 ---
 
-## ** How to Test the Activity Lifecycle?**
+## **How to Test the Activity Lifecycle?**
 1️⃣ **Run the app** and check the **Logcat** output in Android Studio.  
 2️⃣ **Press the home button** → `onPause()`, `onStop()` get triggered.  
 3️⃣ **Reopen the app** → `onRestart()`, `onStart()`, `onResume()` get called.  
