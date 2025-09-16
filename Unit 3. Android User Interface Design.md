@@ -217,52 +217,52 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### **📌 Analogy for Android Activity Lifecycle 🚀**  
+### ** Analogy for Android Activity Lifecycle **  
 ---
 
-### **1️⃣ `onCreate()` → Buying a Movie Ticket 🎟️**
+### **1️⃣ `onCreate()` → Buying a Movie Ticket 🎟**
 - Just like you enter a movie theater and **buy a ticket**, Android creates the activity.
 - This is where you **initialize** things (e.g., setting up UI elements, loading data).  
 - **Example:** Setting up your seat, adjusting your popcorn & drink.
 
 ---
 
-### **2️⃣ `onStart()` → Entering the Theater & Finding a Seat 🍿**
+### **2️⃣ `onStart()` → Entering the Theater & Finding a Seat **
 - The activity becomes **visible**, just like when you find your seat before the movie starts.
 - You are not **watching the movie** yet (not interacting fully).
 - **Example:** Looking at the screen while waiting for the movie trailers to play.
 
 ---
 
-### **3️⃣ `onResume()` → Watching the Movie 🎬**
+### **3️⃣ `onResume()` → Watching the Movie **
 - Now, you're **fully engaged** with the movie, just like an activity that is running in the foreground.
 - You can **interact** with the app (buttons, scrolling, etc.).
 - **Example:** Movie has started, and you're completely immersed in it.
 
 ---
 
-### **4️⃣ `onPause()` → A Short Break (Getting a Call) 📞**
+### **4️⃣ `onPause()` → A Short Break (Getting a Call) **
 - The activity is still **partially visible**, but you **can’t interact** with it.
 - Just like when you **get a phone call during a movie**, the movie **pauses** but doesn’t close.
 - **Example:** You step out to answer a call but can return to your seat.
 
 ---
 
-### **5️⃣ `onStop()` → Leaving the Theater 🚪**
+### **5️⃣ `onStop()` → Leaving the Theater **
 - The activity is **completely hidden** but not destroyed.
 - Similar to **leaving the movie hall** but still having your ticket.
 - **Example:** You walk out to get snacks, but the movie is still running inside.
 
 ---
 
-### **6️⃣ `onRestart()` → Returning to the Theater 🎥**
+### **6️⃣ `onRestart()` → Returning to the Theater **
 - If you decide to **return to the movie**, it resumes from where you left off.
 - The activity **was stopped but not destroyed**.
 - **Example:** You walk back in, sit down, and continue watching.
 
 ---
 
-### **7️⃣ `onDestroy()` → Movie Ends & Theater Closes 🔚**
+### **7️⃣ `onDestroy()` → Movie Ends & Theater Closes **
 - The activity is **completely removed** from memory.
 - Just like when the **movie ends**, and the theater **clears out**.
 - **Example:** You leave the theater, and the staff cleans up.
@@ -272,22 +272,22 @@ public class MainActivity extends AppCompatActivity {
 ## **Summary**
 | **Activity Lifecycle**  | **Movie Theater Analogy** |
 |------------------------|-------------------------|
-| `onCreate()`  | Buying a ticket & finding your seat 🎟️ |
-| `onStart()`   | Sitting down before the movie starts 🍿 |
-| `onResume()`  | Watching the movie 🎬 |
-| `onPause()`   | Stepping out for a call 📞 |
-| `onStop()`    | Leaving the theater 🚪 |
-| `onRestart()` | Returning to continue watching 🎥 |
-| `onDestroy()` | The movie ends & the hall is cleaned 🔚 |
+| `onCreate()`  | Buying a ticket & finding your seat  |
+| `onStart()`   | Sitting down before the movie starts  |
+| `onResume()`  | Watching the movie |
+| `onPause()`   | Stepping out for a call  |
+| `onStop()`    | Leaving the theater  |
+| `onRestart()` | Returning to continue watching  |
+| `onDestroy()` | The movie ends & the hall is cleaned |
 
 ---
-### **📌 Activity Lifecycle in Android – Explained with Code Examples**
+### ** Activity Lifecycle in Android – Explained with Code Examples**
 
 The **Activity Lifecycle** in Android represents the different states an activity goes through from creation to destruction. These states are managed by **callback methods**, which help developers handle changes in the activity’s state.
 
 ---
 
-## **📌 Activity Lifecycle States & Methods**
+## ** Activity Lifecycle States & Methods**
 An Android activity goes through the following states:
 
 | **State**           | **Callback Method**     | **Description** |
@@ -301,7 +301,7 @@ An Android activity goes through the following states:
 
 ---
 
-## **📌 Activity Lifecycle Flow (Diagram)**
+## ** Activity Lifecycle Flow (Diagram)**
 ```
 1️⃣ onCreate()
       ⬇
@@ -318,7 +318,7 @@ An Android activity goes through the following states:
 ```
 ---
 
-## **📌 Example: Implementing Activity Lifecycle Methods in Android**
+## ** Example: Implementing Activity Lifecycle Methods in Android**
 Below is a complete Android **Java** example demonstrating the lifecycle callbacks.
 
 ### **MainActivity.java**
@@ -373,7 +373,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 ---
 
-## **📌 How to Test the Activity Lifecycle?**
+## ** How to Test the Activity Lifecycle?**
 1️⃣ **Run the app** and check the **Logcat** output in Android Studio.  
 2️⃣ **Press the home button** → `onPause()`, `onStop()` get triggered.  
 3️⃣ **Reopen the app** → `onRestart()`, `onStart()`, `onResume()` get called.  
@@ -677,7 +677,31 @@ public class MainActivity extends AppCompatActivity {
 - **`findViewById`**: This function is used to get a reference to the `Checkbox` and `Button` UI components from the layout.
 - **`setOnClickListener`**: This sets an event listener for the `Button`. When the button is clicked, the code checks if the `Checkbox` is checked or not.
 - **`Toast`**: Displays a small pop-up message. If the checkbox is checked, it shows "Form Submitted", otherwise, it shows "Please agree to the terms".
+
+#### OnClick Toast Message 
+
+
+activity_main.xml
+```html
+ <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Button 2"
+        android:onClick="b1" />
+```
+
+```java
+public void b1(View view) {
+// inside an Activity
+Toast.makeText(this, "Hello, world!", Toast.LENGTH_SHORT).show();
+}
+```
+
 ---
+
+
 
 ### **11. Error Elimination Using XML Editor**
 
