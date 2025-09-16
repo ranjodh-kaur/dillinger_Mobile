@@ -10,10 +10,11 @@ Topics:
 - Understanding Activity Life Cycle
 ---
 
-
- - Think of XML like organizing your room. Just like you give different things in your room a name (books, shelf, etc.), you name your UI elements in XML to keep everything organized.
+**XML Naming scheme, XML syntax, XML Referencing, XML constants, XML Styles, XML Colors**
 
 ---
+
+ - Think of XML like organizing your room. Just like you give different things in your room a name (books, shelf, etc.), you name your UI elements in XML to keep everything organized.
 
 ### **1. XML Naming Scheme**
 
