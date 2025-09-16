@@ -72,4 +72,16 @@ _______
 10. **What would happen if an app didn't declare a required permission in its Manifest but tried to access restricted data?**
     - *Answer*: The app would crash or throw a security exception, as Android checks that all necessary permissions are declared in the **Manifest** file before accessing restricted data.
 
+11. **A mobile banking app needs to ensure high security and seamless user experience. Analyze which Android components should be prioritized.**
+
+Solution:
+
+Activities → For secure login screens and transactions.
+
+Services → For background processing like transaction updates.
+
+Content Providers → For secure database access and data sharing.
+
+Broadcast Receivers → For push notifications (OTP, fraud alerts).
+✅ Priority should be on Activities + Services + Content Providers because they directly affect security and user trust.
 ---
