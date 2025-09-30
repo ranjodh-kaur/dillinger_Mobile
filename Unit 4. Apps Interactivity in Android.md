@@ -142,8 +142,329 @@ Both fragments live inside one Activity.
 - Better support for different screen sizes (mobile vs tablet).
 
 - Can add/replace fragments dynamically at runtime.
+
+_____________________________
+A **basic Fragment example** using **XML + Java**.
+
+---
+
+## 1. Create a Fragment Class
+
+```java
+// ExampleFragment.java
+package com.example.myapp;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
+
+public class ExampleFragment extends Fragment {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_example, container, false);
+    }
+}
+```
+
+---
+
+## 2. Create Fragment Layout (XML)
+
+📄 `res/layout/fragment_example.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/fragmentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, I am a Fragment!"
+        android:textSize="18sp"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>
+```
+
+---
+
+## 3. Add a Container for Fragment in Activity Layout
+
+📄 `res/layout/activity_main.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+```
+
+---
+
+## 4. Load Fragment in Activity
+
+📄 `MainActivity.java`
+
+```java
+package com.example.myapp;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Load fragment dynamically
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new ExampleFragment())
+                    .commit();
+        }
+    }
+}
+```
+
+---
+
+## Output
+
+When you run the app, your **MainActivity** will show the **Fragment UI** with:
+`"Hello, I am a Fragment!"`
+
+---
+
+
+* You can add **multiple fragments** inside one activity.
+* You can also replace fragments at runtime (useful for navigation, tabs, etc.).
+
+
+---
+
+#### **Example: ListFragment + DetailFragment**
+
+---
+
+#### 1. **Create ListFragment** (shows a list of items)
+
+📄 `ListFragmentExample.java`
+
+```java
+package com.example.myapp;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import androidx.fragment.app.Fragment;
+
+public class ListFragmentExample extends Fragment {
+
+    String[] items = {"Apple", "Banana", "Cherry", "Mango"};
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
+
+        ListView listView = view.findViewById(R.id.listView);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                items
+        );
+
+        listView.setAdapter(adapter);
+
+        // Handle item click
+        listView.setOnItemClickListener((parent, view1, position, id) -> {
+            String selected = items[position];
+
+            // Replace DetailFragment and pass data
+            DetailFragmentExample detailFragment = DetailFragmentExample.newInstance(selected);
+
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, detailFragment)
+                    .addToBackStack(null) // allows going back
+                    .commit();
+        });
+
+        return view;
+    }
+}
+```
+
+---
+
+## 2. **Layout for ListFragment**
+
+📄 `res/layout/fragment_list.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>
+```
+
+---
+
+## 3. **Create DetailFragment** (shows details of clicked item)
+
+📄 `DetailFragmentExample.java`
+
+```java
+package com.example.myapp;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+
+public class DetailFragmentExample extends Fragment {
+
+    private static final String ARG_ITEM = "selected_item";
+    private String selectedItem;
+
+    // Factory method to pass data
+    public static DetailFragmentExample newInstance(String item) {
+        DetailFragmentExample fragment = new DetailFragmentExample();
+        Bundle args = new Bundle();
+        args.putString(ARG_ITEM, item);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            selectedItem = getArguments().getString(ARG_ITEM);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_detail, container, false);
+
+        TextView textView = view.findViewById(R.id.detailText);
+        textView.setText("You selected: " + selectedItem);
+
+        return view;
+    }
+}
+```
+
+---
+
+## 4. **Layout for DetailFragment**
+
+📄 `res/layout/fragment_detail.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/detailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details will appear here"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_blue_dark"/>
+</FrameLayout>
+```
+
+---
+
+## 5. **Main Activity**
+
+📄 `MainActivity.java`
+
+```java
+package com.example.myapp;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        if (savedInstanceState == null) {
+            // Start with ListFragment
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new ListFragmentExample())
+                    .commit();
+        }
+    }
+}
+```
+
+---
+
+## 6. **Activity Layout**
+
+📄 `res/layout/activity_main.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+```
+
+---
+
+#### Output
+
+1. App starts → shows **ListFragment** with `Apple, Banana, Cherry, Mango`.
+2. Click `Mango` → **DetailFragment** replaces it and shows →
+   `"You selected: Mango"`.
+3. Press back → returns to list.
+
+
 _________________
 #### Android Intent Class: Intent Types, Intent Filters, Instantiating Intent Object, and Android Context Class
+__________________
 
 Let’s break this down with a simple analogy!
 
