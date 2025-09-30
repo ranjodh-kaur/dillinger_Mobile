@@ -118,6 +118,30 @@ Imagine you are watching TV, and you switch from Channel 1 to Channel 2. Here’
 - **Fragment Life Cycle** is the set of states (like turning on the TV, watching, or pausing) that each fragment goes through.
 
 By using fragments, you can make your app more flexible and modular, just like you can have many different channels on a TV, and switch between them seamlessly without turning off the TV itself.
+
+#### Example of fragment in Android
+
+Suppose you have an app with a screen showing:
+
+- A list of items on the left side.
+
+- The details of the selected item on the right side.
+
+Here:
+
+- ListFragment → shows the list of items.
+
+- DetailFragment → shows the details of the selected item.
+
+Both fragments live inside one Activity.
+
+#### Benefits of Fragments
+
+- Reusable UI components.
+
+- Better support for different screen sizes (mobile vs tablet).
+
+- Can add/replace fragments dynamically at runtime.
 _________________
 #### Android Intent Class: Intent Types, Intent Filters, Instantiating Intent Object, and Android Context Class
 
