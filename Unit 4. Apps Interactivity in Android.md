@@ -146,34 +146,11 @@ Both fragments live inside one Activity.
 _____________________________
 A **basic Fragment example** using **XML + Java**.
 
----
 
-## 1. Create a Fragment Class
-
-```java
-// ExampleFragment.java
-package com.example.myapp;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.fragment.app.Fragment;
-
-public class ExampleFragment extends Fragment {
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_example, container, false);
-    }
-}
-```
 
 ---
 
-## 2. Create Fragment Layout (XML)
+## 1. Create Fragment Layout (XML)
 
 📄 `res/layout/fragment_example.xml`
 
@@ -198,6 +175,31 @@ public class ExampleFragment extends Fragment {
 ```
 
 ---
+
+## 2. Create a Fragment Class
+
+```java
+// ExampleFragment.java
+package com.example.myapp;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
+
+public class ExampleFragment extends Fragment {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_example, container, false);
+    }
+}
+```
+
+
 
 ## 3. Add a Container for Fragment in Activity Layout
 
