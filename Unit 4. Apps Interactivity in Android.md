@@ -5,7 +5,7 @@ ______
 - **Android Intent Class:** Intent types, Intent Filters, Instantiating Intent Object, Android Context Class
 - **Event Processing:** Events, Event Listener, Event Handler
 _____
-Let’s break down **Android Fragments** with a new example using a simple analogy!
+ **Android Fragments** with a new example!
 
 ##### Android Fragment: Fragment Class and Fragment Life Cycle
 **Analogy**: Think of your phone as a *television*. The television has a big screen (this represents the *activity* in Android), and the *fragments* are like *channels* on that screen. Each channel shows different content, such as news, sports, or a movie. You can switch between these channels (fragments) while still using the same screen (activity).
