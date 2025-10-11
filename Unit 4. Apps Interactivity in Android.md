@@ -1,6 +1,6 @@
 # Unit 4. Apps Interactivity in Android
 ______
-**Topics:**
+**Topics:** 
 - **Android Fragment:** Fragment Class, Fragment Life Cycle
 - **Android Intent Class:** Intent types, Intent Filters, Instantiating Intent Object, Android Context Class
 - **Event Processing:** Events, Event Listener, Event Handler
