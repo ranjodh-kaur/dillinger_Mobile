@@ -270,7 +270,7 @@ _______
 ### **Q9.**
 
 Describe a situation where using a background thread (not the main UI thread) is essential.
-Explain how AsyncTask (or a modern alternative such as Kotlin Coroutines/ExecutorService) can be used to handle such tasks.
+Explain how AsyncTask  can be used to handle such tasks.
 
 ### **Q10.**
 
