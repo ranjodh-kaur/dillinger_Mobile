@@ -265,14 +265,23 @@ If the service is ever interrupted, Android may automatically restart it. For ad
 
 _______
 
-## **6. Android Threads & Process Life Cycle**
+## **Android Services & Background Processing**
 
-### **Q9.**
+### **Q.**
+
+You are designing a fitness app that plays an audio coach in the background while the user performs exercises.
+Explain how you would implement a **foreground service** with notifications so the service keeps running reliably.
+
+---
+
+## **Android Threads & Process Life Cycle**
+
+### **Q.**
 
 Describe a situation where using a background thread (not the main UI thread) is essential.
 Explain how AsyncTask  can be used to handle such tasks.
 
-### **Q10.**
+### **Q.**
 
 Explain the **process life cycle** in Android with respect to activities, services, and background tasks.
 Provide an example where a background process might be killed and restarted.
