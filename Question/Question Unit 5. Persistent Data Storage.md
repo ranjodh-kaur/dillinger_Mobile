@@ -583,4 +583,35 @@ You want to allow users to back up and restore their notes from the SQLite datab
 
 ---
 
+Sure! Here is a **fresh, unique, exam-style question paper** based on your topics.
+The questions follow the *same pattern and difficulty level* as the sample but do **not repeat** any of the originals.
+
+---
+
+
+
+## **3. Android Services & Background Processing**
+
+### **Q5.**
+
+You are designing a fitness app that plays an audio coach in the background while the user performs exercises.
+Explain how you would implement a **foreground service** with notifications so the service keeps running reliably.
+
+---
+
+## **4. SQLite & Data Management**
+
+### **Q6. (a)**
+
+A library app stores book titles, authors, and availability status.
+Describe how you would design a **SQLite database schema**, insert data, and query for all "available" books.
+
+### **Q6. (b)**
+
+Explain how the Android **ContentResolver** can be used to update information in a SQLite database from another component of the app.
+
+---
+
+
+
 
