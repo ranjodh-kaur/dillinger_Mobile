@@ -344,3 +344,22 @@ alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, triggerAtMillis, inter
 This will ensure that the service runs every 10 minutes, even if the app is minimized.
 
 ---
+
+## **Debugging, Tools & Security**
+
+### **Q7.**
+
+Discuss the purpose of **Logcat, adb (Android Debug Bridge), and DDMS**, and explain how each tool helps during debugging.
+
+### **Q8.**
+
+Your app needs to read SMS messages, but this is a sensitive permission.
+Explain:
+
+* How to declare the permission
+* How to request it at runtime
+* Why Android classifies it as a dangerous permission
+* How to secure your app before release
+
+---
+
