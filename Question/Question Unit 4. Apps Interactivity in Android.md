@@ -547,11 +547,11 @@ submitButton.setOnClickListener(new View.OnClickListener() {
 
 ## **1. Android Fragments & App Interactivity**
 
-### **Q1.**
+### **Q.**
 
 Explain how an Android Fragment works like sections in a newspaper app, where each section shows different content but the main screen remains the same. Use a real-world analogy.
 
-### **Q2.**
+### **Q.**
 
 "Event listeners and event handlers play different roles in managing user interactions."
 Justify this statement with an example.
@@ -560,7 +560,7 @@ Justify this statement with an example.
 
 ## **2. Permissions, Intents & Context**
 
-### **Q3.**
+### **Q.**
 
 Your travel journal app needs to access the device location to tag photos with GPS coordinates.
 Demonstrate how you would:
@@ -570,7 +570,7 @@ Demonstrate how you would:
 * Access the location if granted
   Include **Android 13+ compatible** code snippets.
 
-### **Q4.**
+### **Q.**
 
 You want to share a text message from your app to WhatsApp or any compatible app.
 Explain how to use an **implicit intent** for this purpose.
