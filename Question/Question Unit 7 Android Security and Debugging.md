@@ -347,11 +347,11 @@ This will ensure that the service runs every 10 minutes, even if the app is mini
 
 ## **Debugging, Tools & Security**
 
-### **Q7.**
+### **Q.**
 
 Discuss the purpose of **Logcat, adb (Android Debug Bridge), and DDMS**, and explain how each tool helps during debugging.
 
-### **Q8.**
+### **Q.**
 
 Your app needs to read SMS messages, but this is a sensitive permission.
 Explain:
