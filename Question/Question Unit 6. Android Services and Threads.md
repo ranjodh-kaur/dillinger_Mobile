@@ -262,3 +262,9 @@ startService(intent) // This will start the foreground service
 ### Managing Interruption
 
 If the service is ever interrupted, Android may automatically restart it. For added reliability, consider saving the progress of the sync task periodically. If the service restarts, you can resume from where it left off.
+
+_______
+
+
+
+
