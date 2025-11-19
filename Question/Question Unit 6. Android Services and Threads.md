@@ -265,6 +265,19 @@ If the service is ever interrupted, Android may automatically restart it. For ad
 
 _______
 
+## **6. Android Threads & Process Life Cycle**
+
+### **Q9.**
+
+Describe a situation where using a background thread (not the main UI thread) is essential.
+Explain how AsyncTask (or a modern alternative such as Kotlin Coroutines/ExecutorService) can be used to handle such tasks.
+
+### **Q10.**
+
+Explain the **process life cycle** in Android with respect to activities, services, and background tasks.
+Provide an example where a background process might be killed and restarted.
+
+---
 
 
 
