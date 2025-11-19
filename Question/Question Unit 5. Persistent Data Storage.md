@@ -588,17 +588,6 @@ The questions follow the *same pattern and difficulty level* as the sample but d
 
 ---
 
-
-
-## **3. Android Services & Background Processing**
-
-### **Q5.**
-
-You are designing a fitness app that plays an audio coach in the background while the user performs exercises.
-Explain how you would implement a **foreground service** with notifications so the service keeps running reliably.
-
----
-
 ## **4. SQLite & Data Management**
 
 ### **Q6. (a)**
